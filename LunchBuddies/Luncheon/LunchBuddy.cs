@@ -8,7 +8,8 @@ namespace LunchBuddies.Luncheon
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public LunchBuddy(string firstname, string lastname )
+        public string Food { get; set; }
+        public LunchBuddy(string firstname, string lastname)
         {
             FirstName = firstname;
             LastName = lastname;
@@ -22,6 +23,24 @@ namespace LunchBuddies.Luncheon
         {
             Console.WriteLine($"{FirstName} {LastName} ate {food} at the office .");
         }
-        
+        public void Eat(List<LunchBuddy> companions)
+        {
+            var restaurant = new Restaurant();
+            foreach (var companion in companions)
+            {
+                Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {companion.FirstName}.");
+            }
+
+        }
+        public void Eat(string food, List<LunchBuddy> companions)
+        {
+            var restaurant = new Restaurant();
+            Food = food;
+
+            foreach (var companion in companions)
+            {
+                Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {companion.FirstName}. {companion.FirstName} ordered the {Food}.");
+            }
+        }
     }
 }

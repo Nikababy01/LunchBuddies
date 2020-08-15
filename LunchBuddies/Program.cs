@@ -1,6 +1,6 @@
 ﻿using LunchBuddies.Luncheon;
 using System;
-
+using System.Collections.Generic;
 
 namespace LunchBuddies
 {
@@ -8,9 +8,19 @@ namespace LunchBuddies
     {
         static void Main(string[] args)
         {
-            var Kay = new LunchBuddy("Kay", "Thomas");
-            Kay.Eat();
-            Kay.Eat("Hot Chicken");
+            var kay = new LunchBuddy("Kay", "Thomas");
+            kay.Eat();
+            kay.Eat("Hot Chicken");
+            
+            var marie = new LunchBuddy("Marie", "Thomas");
+            var earl = new LunchBuddy("Earl", "Thomas");
+            
+            var companions = new List<LunchBuddy> { };
+            companions.Add(marie);
+            companions.Add(earl);
+            
+            kay.Eat(companions);
+            kay.Eat("Spaghetti", companions);
         }
     }
 }
