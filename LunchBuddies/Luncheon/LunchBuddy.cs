@@ -26,10 +26,14 @@ namespace LunchBuddies.Luncheon
         public void Eat(List<LunchBuddy> companions)
         {
             var restaurant = new Restaurant();
+            var firstnames = new List<string> { };
             foreach (var companion in companions)
             {
-                Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {companion.FirstName}.");
+               var names = companion.FirstName;
+                firstnames.Add(names);
             }
+            string friends = string.Join(",", firstnames);
+                Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {friends}.");
 
         }
         public void Eat(string food, List<LunchBuddy> companions)

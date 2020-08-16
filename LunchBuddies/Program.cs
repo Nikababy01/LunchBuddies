@@ -18,7 +18,8 @@ namespace LunchBuddies
             var companions = new List<LunchBuddy> { };
             companions.Add(marie);
             companions.Add(earl);
-            
+             
+
             kay.Eat(companions);
             kay.Eat("Spaghetti", companions);
         }
