@@ -32,7 +32,7 @@ namespace LunchBuddies.Luncheon
                var names = companion.FirstName;
                 firstnames.Add(names);
             }
-            string friends = string.Join(",", firstnames);
+                string friends = string.Join(" and ", firstnames);
                 Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {friends}.");
 
         }
@@ -40,11 +40,14 @@ namespace LunchBuddies.Luncheon
         {
             var restaurant = new Restaurant();
             Food = food;
-
+            var firstnames = new List<string> { };
             foreach (var companion in companions)
             {
-                Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {companion.FirstName}. {companion.FirstName} ordered the {Food}.");
+                var names = companion.FirstName;
+                firstnames.Add(names);
             }
+            string friends = string.Join(" and ", firstnames);
+            Console.WriteLine($"{FirstName} { LastName} is at {restaurant.Name} eating good with {friends}. {friends} ordered the {Food}.");
         }
     }
 }
